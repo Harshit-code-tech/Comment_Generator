@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <div class="container">
+        <h1>Comment Generator</h1>
+        <form action="/" method="post">
+            <textarea name="content" rows="6" placeholder="Enter text here...">{{ content }}</textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        {% if comments %}
+        <div class="results">
+            <h2>Processing Time: {{ processing_time | round(2) }} seconds</h2>
+            <div class="tone">Tone Analyzed as: {{ comments['tone'] }}</div>
+            {% for type, comment in comments.items() %}
+                {% if type != 'tone' %}
+                <div class="comment {{ type }}">
+                    <h3>{{ type.capitalize() }} Comment</h3>
+                    <p>{{ comment }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
