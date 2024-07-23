@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "functions": [
-    {
+  "functions": {
+    "api": {
       "src": "run.py",
-      "runtime": "python" 
+      "runtime": "python" // Replace with "python3.9" or specific version if needed
     }
-  ],
+  },
   "routes": [
     {
       "src": "/static/(.*)",
@@ -13,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "functions/run.py"
+      "dest": "api" // Points to the function name in the functions object
     }
   ]
 }
