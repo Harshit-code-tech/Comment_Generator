@@ -12,8 +12,6 @@ comment_generation_tool/
 │   │   └── style.css
 │   ├── js/
 │   │   ├── script.js
-│   │   └── particles_config.json
-│   └── favicon.ico
 │
 ├── templates/
 │   ├── layout/
@@ -26,4 +24,7 @@ comment_generation_tool/
 │
 ├── requirements.txt
 ├── run.py
+├── Structure
+├── vercel.json
 └── README.md
+
