@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "builds": [
+  "functions": [
     {
       "src": "run.py",
-      "use": "@vercel/python"
+      "runtime": "python" 
     }
   ],
   "routes": [
@@ -13,8 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "run.py"
+      "dest": "functions/run.py"
     }
   ]
 }
-
