@@ -15,11 +15,6 @@
       "src": "/(.*)",
       "dest": "run.py"
     }
-  ],
-  "functions": {
-    "api/*": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  }
+  ]
 }
+
