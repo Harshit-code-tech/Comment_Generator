@@ -8,10 +8,6 @@ The Comment Generation Tool is a web application built with Flask that leverages
 
 ### Directory Overview
 
-- **`data/`**: Contains datasets and pre-trained models used by the application.
-  - **`datasets/`**: Stores dataset files required for training or evaluating models.
-  - **`pre_trained_model/`**: Includes pre-trained NLP models that the application uses for text analysis.
-
 - **`app/`**: Contains the core application code.
   - **`__init__.py`**: Initializes the Flask application and any other necessary configurations.
   - **`analysis.py`**: Implements functions for analyzing the sentiment of text using various techniques.
