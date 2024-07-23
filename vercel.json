@@ -1,16 +1,19 @@
 {
   "version": 2,
-  "functions": {
-    "api": { // Function name (can be anything descriptive)
-      "src": "run.py",
-      "runtime": "python" // Replace with "python3.9" or specific version if needed
-    }
-  },
-  "routes": [
-    { // Existing static route for "/static/*" remains the same }
+  "builds": [
     {
-      "src": "/(.*)", // Captures all other paths
-      "dest": "functions/api" // Routes requests to the function (notice the change)
+      "src": "run.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "run.py"
     }
   ]
 }
